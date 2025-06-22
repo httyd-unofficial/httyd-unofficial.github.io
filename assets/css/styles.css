@@ -1,8 +1,7 @@
 /* === Fonts & Variables === */
 @font-face {
   font-family: "OneUISans";
-  src: url("../fonts/(Regular)%20One%20UI%20Sans.ttf") format("truetype");
-  font-weight: 400;
+  src: url("https://raw.githubusercontent.com/gabemods/about/main/assets/fonts/OneUISans-Regular.ttf") format("truetype");  font-weight: 400;
   font-style: normal;
 }
 
