@@ -1,8 +1,14 @@
 /* === Fonts & Variables === */
 @font-face {
   font-family: "OneUISans";
-  src: url("https://raw.githubusercontent.com/gabemods/about/main/assets/fonts/OneUISans-Regular.ttf") format("truetype");  font-weight: 400;
+  src: url("https://raw.githubusercontent.com/gabemods/about/main/assets/fonts/%28Regular%29%20One%20UI%20Sans.ttf") format("truetype");  font-weight: 400;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'OneUISans';
+  src: url('../fonts/OneUISans-Bold.ttf') format('truetype');
+  font-weight: 700;
 }
 
 :root {
@@ -13,6 +19,9 @@
   --header-bg-light: rgba(250, 250, 250, 0.0);
   --header-bg-dark: rgba(18, 18, 18, 0.7);
   --accent: #1a73e8;
+  --accent: #e0a100;
+  --red-accent: #b22222;
+  --tranparent-button: fffff;
   --transition: 0.25s ease-in-out;
   --card-light: #ffffff;
   --card-dark: #121212;
@@ -26,7 +35,8 @@
 
 body {
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "OneUISans", "Open Sans";
+  font-weight: 400;
   background: var(--bg-light);
   color: var(--text-light);
   transition: background var(--transition), color var(--transition);
@@ -40,12 +50,14 @@ body.dark {
 
 /* === Header === */
 .main-header {
+  font-family: "OneUISans";
+  font-weight: 900;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   background: var(--header-bg-light);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(15px);
   padding: 16px 24px;
   z-index: 200;
   transition: padding var(--transition), backdrop-filter var(--transition), background var(--transition);
@@ -84,6 +96,27 @@ body.dark .main-header.scrolled {
   font-size: 1.2rem;
 }
 
+.thank-you {
+  padding: 20px 20px;
+  background: var(--bg-light);
+  border-top: 2px solid var(--red-accent);
+  
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.thank-you h2 {
+  color: var(--red-accent);
+  margin-bottom: 16px;
+}
+
+.thank-you p {
+  max-width: 800px;
+  margin: 0 auto 12px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
 /* === Hero Section === */
 .hero-banner {
   position: relative;
@@ -101,11 +134,11 @@ body.dark .main-header.scrolled {
 
 .hero-content {
   position: absolute;
-  bottom: 25px;
-  left: 10px;
-  color: white;
-  background: rgba(0, 0, 0, 0.0);
-  padding: 16px 24px;
+  bottom: 40px;
+  left: 35px;
+  color: transparent;
+  background: transparent;
+  padding: 5px 5px;
   border-radius: 12px;
   max-width: 80%;
 }
@@ -117,17 +150,17 @@ body.dark .main-header.scrolled {
 
 .hero-button {
   display: inline-block;
-  background: var(--accent);
-  color: white;
+  background: var(--transparent-button);
+  color: transparent;
   padding: 10px 20px;
   font-weight: bold;
-  border-radius: 24px;
+  border-radius: 5px;
   text-decoration: none;
   transition: background 0.5s ease, transform 0.5s ease;
 }
 
  .hero-button:active {
-  background: #125ccf;
+  background: var(--transparent-button);
   transform: scale(1.07) 
 }
 
