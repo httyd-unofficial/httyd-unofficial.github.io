@@ -48,3 +48,15 @@ document.addEventListener('keydown', e => {
 });
 
 document.getElementById("current-year").textContent = new Date().getFullYear();
+
+  const imageTitle = document.querySelector('.image-title');
+  const textTitle = document.querySelector('.text-title');
+
+  function toggleTitle() {
+    const isImageVisible = imageTitle.style.display !== 'none';
+    imageTitle.style.display = isImageVisible ? 'none' : 'block';
+    textTitle.style.display = isImageVisible ? 'block' : 'none';
+  }
+
+  imageTitle.addEventListener('click', toggleTitle);
+  textTitle.addEventListener('click', toggleTitle);
