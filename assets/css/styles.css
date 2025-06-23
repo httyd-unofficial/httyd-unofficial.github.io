@@ -92,15 +92,10 @@ body.dark .main-header.scrolled {
   display: block;
   cursor: pointer;
   transition: opacity 0.4s ease, visibility 0.4s ease;
-  white-space: nowrap;
-  overflow: hidden;
-  display: block;
 }
 
 tex-title {
  transition: opacity 0.4s ease, visibility 0.4s ease;
-  white-space: nowrap;
-  overflow: hidden;
   display: block;
 }
 
