@@ -6,7 +6,7 @@
 }
 
 @font-face {
-  font-family: 'OneUISansBold';
+  font-family: "HTTYD-Font";
   src: url('../fonts/Compacta Bold.otf') format('truetype');
   font-weight: 1000;
 }
@@ -50,7 +50,7 @@ body.dark {
 
 /* === Header === */
 .main-header {
-  font-family: "OneUISansBold";
+  font-family: "HTTYD-Font";
   font-weight: 900;
   position: fixed;
   top: 0;
@@ -87,9 +87,11 @@ body.dark .main-header.scrolled {
 }
 
 .header-title {
-  max-width: 100px; /* Adjust as needed */
+  max-width: 100px;
   height: auto;
   display: block;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 
 .main-header h1 {
