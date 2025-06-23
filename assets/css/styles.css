@@ -6,9 +6,9 @@
 }
 
 @font-face {
-  font-family: 'OneUISans';
-  src: url('../fonts/OneUISans-Bold.ttf') format('truetype');
-  font-weight: 700;
+  font-family: 'OneUISansBold';
+  src: url('../fonts/Compacta Bold.otf') format('truetype');
+  font-weight: 1000;
 }
 
 :root {
@@ -50,7 +50,7 @@ body.dark {
 
 /* === Header === */
 .main-header {
-  font-family: "OneUISans";
+  font-family: "OneUISansBold";
   font-weight: 900;
   position: fixed;
   top: 0;
@@ -84,6 +84,12 @@ body.dark .main-header.scrolled {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header-title {
+  max-width: 100px; /* Adjust as needed */
+  height: auto;
+  display: block;
 }
 
 .main-header h1 {
