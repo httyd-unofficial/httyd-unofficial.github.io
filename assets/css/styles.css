@@ -91,7 +91,19 @@ body.dark .main-header.scrolled {
   height: auto;
   display: block;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+tex-title {
+ transition: opacity 0.4s ease, visibility 0.4s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 }
 
 .main-header h1 {
@@ -215,6 +227,8 @@ section h2 {
   scroll-snap-align: start;
   transition: background 0.4s ease, transform 0.4s ease;
   z-index: 10;
+  padding: 0;
+  margin: 0;
 }
 
 body.dark .card {
