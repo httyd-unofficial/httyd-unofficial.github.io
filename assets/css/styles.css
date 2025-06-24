@@ -114,7 +114,7 @@ body.dark .main-header.scrolled {
   width: auto;
 }
 
-tex-title {
+text-title {
 width: 100;
 max-width: 500px;
 display: block;
@@ -524,7 +524,7 @@ body.dark .character-section {
 }
 
 .dragon-library {
-  padding: 60px 20px 5px;
+  padding: 60px 20px 40px;
   background: var(--bg-light);
   color: var(--text-light);
   border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -547,39 +547,67 @@ body.dark .dragon-library {
   text-align: center;
 }
 
-.media-split {
+.dragon-library .media-split {
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.media-group {
+.dragon-library .media-group {
   flex: 1 1 300px;
 }
 
-.media-group h3 {
+.dragon-library .media-group h3 {
   margin-bottom: 12px;
   font-size: 1.4rem;
   border-bottom: 2px solid var(--accent);
   padding-bottom: 4px;
 }
 
-.media-group ul {
+.dragon-library .media-group ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.media-group ul li {
+.dragon-library .media-group ul li {
   margin-bottom: 8px;
   padding-left: 1rem;
   position: relative;
 }
 
-.media-group ul li::before {
+.dragon-library .media-group ul li::before {
   content: "•";
   position: absolute;
   left: 0;
   color: var(--accent);
+}
+
+/* === Thank You Message - Enhanced === */
+.thank-you {
+  padding: 60px 20px;
+  background: var(--bg-light);
+  color: var(--text-light);
+  border-top: 2px solid var(--red-accent);
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+body.dark .thank-you {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.thank-you h2 {
+  color: var(--red-accent);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.thank-you p {
+  max-width: 800px;
+  margin: 0 auto 12px;
+  font-size: 1.15rem;
+  line-height: 1.7;
 }
