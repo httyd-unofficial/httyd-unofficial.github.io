@@ -49,7 +49,7 @@ document.addEventListener('keydown', e => {
 
 document.getElementById("current-year").textContent = new Date().getFullYear();
 
-  const imageTitleContainer = document.querySelector('.image-title-container');
+const imageTitleContainer = document.querySelector('.image-title-container');
 const textTitleContainer = document.querySelector('.text-title-container');
 
 function toggleTitle() {
@@ -59,3 +59,51 @@ function toggleTitle() {
 
 imageTitleContainer.addEventListener('click', toggleTitle);
 textTitleContainer.addEventListener('click', toggleTitle);
+
+// Scroll Wrapper Padding
+document.querySelectorAll('.scroll-wrapper').forEach(wrapper => {
+  const row = wrapper.querySelector('.scroll-row');
+  
+  const updatePadding = () => {
+    const scrollLeft = wrapper.scrollLeft;
+    const maxScrollLeft = row.scrollWidth - wrapper.clientWidth;
+    
+    if (scrollLeft <= 0) {
+      // At start: show padding
+      row.style.paddingLeft = '24px';
+    } else {
+      row.style.paddingLeft = '0px';
+    }
+    
+    if (scrollLeft >= maxScrollLeft - 1) {
+      // At end: show padding
+      row.style.paddingRight = '24px';
+    } else {
+      row.style.paddingRight = '0px';
+    }
+  };
+  
+  wrapper.addEventListener('scroll', updatePadding);
+  window.addEventListener('resize', updatePadding);
+  updatePadding();
+});
+
+// Section h2 margin animation
+document.querySelectorAll('.scroll-row').forEach(row => {
+  const section = row.closest('section');
+  const h2 = section?.querySelector('h2');
+  if (!h2) return;
+  
+  let scrollTimeout;
+  
+  row.addEventListener('scroll', () => {
+    h2.classList.add('shrink-margin');
+    
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      if (row.scrollLeft === 0 || row.scrollLeft + row.clientWidth >= row.scrollWidth) {
+        h2.classList.remove('shrink-margin');
+      }
+    }, 100); // quicker response time
+  });
+});
