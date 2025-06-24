@@ -34,10 +34,17 @@
   </head>
   <body>
   <header class="main-header">
-  <div class="header-inner toggle-title">
-    <img src="assets/images/httyd-title.png" alt="HTTYD Title" class="header-title image-title" />
-    <h1 class="header-title text-title" style="display: none;">How to Train Your Dragon</h1>
-
+  <div class="header-inner">
+    <!-- Image Title -->
+    <div class="title-container image-title-container">
+      <img src="assets/images/httyd-title.png" alt="HTTYD Title" class="image-title" />
+    </div>
+    
+    <!-- Text Title -->
+    <div class="title-container text-title-container hidden">
+      <h1 class="text-title">How to Train Your Dragon</h1>
+    </div>
+    
     <button id="search-icon" aria-label="Open Search">
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
         <circle cx="11" cy="11" r="7" />

@@ -94,9 +94,35 @@ body.dark .main-header.scrolled {
   transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
+.title-container {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.title-container.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+  position: absolute;
+}
+
+.image-title {
+  height: 35px;
+  width: auto;
+}
+
 tex-title {
- transition: opacity 0.4s ease, visibility 0.4s ease;
-  display: block;
+width: 100;
+max-width: 500px;
+display: block;
+font-size: 1.3rem;
+margin: 0;
+transition: font-size var(--transition);
+white-space: nowrap;
+  overflow: hidden;
 }
 
 .main-header h1 {
@@ -121,6 +147,10 @@ tex-title {
 .thank-you h2 {
   color: var(--red-accent);
   margin-bottom: 16px;
+}
+
+body.dark .thank-you {
+  background: var(--bg-dark);
 }
 
 .thank-you p {
