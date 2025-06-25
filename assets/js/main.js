@@ -107,3 +107,37 @@ document.querySelectorAll('.scroll-row').forEach(row => {
     }, 100); // quicker response time
   });
 });
+
+const settingsButton = document.getElementById('settings-button');
+const settingsDialog = document.getElementById('settings-dialog');
+const themeSelect = document.getElementById('theme-select');
+
+settingsButton.addEventListener('click', () => {
+  settingsDialog.show();
+});
+
+function applyPreferredTheme(value) {
+  if (value === 'system') {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    document.body.classList.toggle('dark', prefersDark.matches);
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', prefersDark.matches ? '#121212' : '#ffffff');
+    prefersDark.onchange = (e) => {
+      document.body.classList.toggle('dark', e.matches);
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', e.matches ? '#121212' : '#ffffff');
+    };
+  } else {
+    document.body.classList.toggle('dark', value === 'dark');
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', value === 'dark' ? '#121212' : '#ffffff');
+  }
+}
+
+// Load saved theme
+const savedTheme = localStorage.getItem('theme') || 'system';
+themeSelect.value = savedTheme;
+applyPreferredTheme(savedTheme);
+
+themeSelect.addEventListener('change', () => {
+  const selectedTheme = themeSelect.value;
+  localStorage.setItem('theme', selectedTheme);
+  applyPreferredTheme(selectedTheme);
+});

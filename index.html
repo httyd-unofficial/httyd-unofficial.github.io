@@ -31,6 +31,21 @@
   <meta name="msapplication-TileImage" content="assets/images/favicon/ms-icon-144x144.png" />
   <meta name="theme-color" content="#ffffff" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded" rel="stylesheet">
+  <script type="importmap">
+  {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+<script type="module">
+  import '@material/web/all.js';
+  import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+  
+  document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+</script>
   </head>
   <body>
   <header class="main-header">
@@ -45,13 +60,39 @@
       <h1 class="text-title">How to Train Your Dragon</h1>
     </div>
     
-    <button id="search-icon" aria-label="Open Search">
-      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="11" cy="11" r="7" />
-        <line x1="16.65" y1="16.65" x2="21" y2="21" />
-      </svg>
-    </button>
+    <!-- Icons aligned together -->
+    <div class="header-icons">
+      <button id="search-icon" aria-label="Open Search">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7" />
+          <line x1="16.65" y1="16.65" x2="21" y2="21" />
+        </svg>
+      </button>
+      
+      <!-- Settings icon -->
+      <md-icon-button id="settings-button" aria-label="Settings">
+        <md-icon>settings</md-icon>
+      </md-icon-button>
+    </div>
   </div>
+  
+  <!-- Settings dialog -->
+  <md-dialog id="settings-dialog">
+    <div slot="headline">Settings</div>
+    <form slot="content">
+      <md-outlined-select id="theme-select" label="Theme">
+        <md-select-option value="system">
+          <div slot="headline">System</div>
+        </md-select-option>
+        <md-select-option value="light">
+          <div slot="headline">Light</div>
+        </md-select-option>
+        <md-select-option value="dark">
+          <div slot="headline">Dark</div>
+        </md-select-option>
+      </md-outlined-select>
+    </div>
+  </md-dialog>
 </header>
 <div class="search-overlay">
   <button id="close-search" aria-label="Close Search">×</button>
