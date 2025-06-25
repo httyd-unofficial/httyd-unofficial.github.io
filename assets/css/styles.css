@@ -608,3 +608,31 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .thank-you h2 {
+    font-size: 1.5rem;
+  }
+  
+  .thank-you p {
+    font-size: 0.95rem;
+  }
+  
+  footer {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .thank-you h2 {
+    font-size: 1.5rem;
+  }
+  
+  .thank-you p {
+    font-size: 0.9rem;
+  }
+  
+  footer {
+    font-size: 0.8rem;
+  }
+}
