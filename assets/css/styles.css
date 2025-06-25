@@ -636,3 +636,13 @@ footer a:hover {
     font-size: 0.8rem;
   }
 }
+
+@media (max-width: 812px) and (orientation: landscape) {
+  .thank-you h2 {
+    font-size: 1.3rem;
+  }
+  
+  .thank-you p {
+    font-size: 0.85rem;
+  }
+}
