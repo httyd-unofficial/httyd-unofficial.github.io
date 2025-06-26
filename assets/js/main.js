@@ -69,14 +69,12 @@ document.querySelectorAll('.scroll-wrapper').forEach(wrapper => {
     const maxScrollLeft = row.scrollWidth - wrapper.clientWidth;
     
     if (scrollLeft <= 0) {
-      // At start: show padding
       row.style.paddingLeft = '24px';
     } else {
       row.style.paddingLeft = '0px';
     }
     
     if (scrollLeft >= maxScrollLeft - 1) {
-      // At end: show padding
       row.style.paddingRight = '24px';
     } else {
       row.style.paddingRight = '0px';
@@ -104,16 +102,43 @@ document.querySelectorAll('.scroll-row').forEach(row => {
       if (row.scrollLeft === 0 || row.scrollLeft + row.clientWidth >= row.scrollWidth) {
         h2.classList.remove('shrink-margin');
       }
-    }, 100); // quicker response time
+    }, 100);
   });
 });
 
 const settingsButton = document.getElementById('settings-button');
-const settingsDialog = document.getElementById('settings-dialog');
+const settingsModal = document.getElementById('settings-modal');
 const themeSelect = document.getElementById('theme-select');
 
-settingsButton.addEventListener('click', () => {
-  settingsDialog.show();
+// ✅ Check if dialog API is supported
+if (typeof HTMLDialogElement === 'function' && settingsModal?.showModal) {
+  // ✅ Show the dialog when settings icon is clicked
+  settingsButton?.addEventListener('click', () => {
+    settingsModal.showModal();
+  });
+  
+  // ✅ Close the dialog when clicking outside the modal content
+  settingsModal.addEventListener('click', (e) => {
+    if (e.target === settingsModal) {
+      settingsModal.close();
+    }
+  });
+} else {
+  console.error('Your browser does not support <dialog>.');
+}
+
+const closeSettingsBtn = document.getElementById('close-settings');
+
+closeSettingsBtn.addEventListener('click', () => {
+  settingsModal.classList.add('closing');
+  settingsModal.addEventListener(
+    'transitionend',
+    () => {
+      settingsModal.close();
+      settingsModal.classList.remove('closing');
+    },
+    { once: true }
+  );
 });
 
 function applyPreferredTheme(value) {

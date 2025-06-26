@@ -19,6 +19,7 @@
   <meta name="robots" content="index, follow" />
   <meta name="keywords" content="How to Train Your Dragon, HTTYD, DreamWorks, Dragons, Films, TV Shows, Specials" />
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/material-dialog.css" />
   <meta name="google-site-verification" content="HihCOsgH0UVQPbqo7pMEgDNXIXR16hIm907pXZPI3w8" />
   <link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicon/apple-icon-152x152.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-icon-180x180.png" />
@@ -75,24 +76,6 @@
       </md-icon-button>
     </div>
   </div>
-  
-  <!-- Settings dialog -->
-  <md-dialog id="settings-dialog">
-    <div slot="headline">Settings</div>
-    <form slot="content">
-      <md-outlined-select id="theme-select" label="Theme">
-        <md-select-option value="system">
-          <div slot="headline">System</div>
-        </md-select-option>
-        <md-select-option value="light">
-          <div slot="headline">Light</div>
-        </md-select-option>
-        <md-select-option value="dark">
-          <div slot="headline">Dark</div>
-        </md-select-option>
-      </md-outlined-select>
-    </div>
-  </md-dialog>
 </header>
 <div class="search-overlay">
   <button id="close-search" aria-label="Close Search">×</button>
@@ -591,6 +574,20 @@
     <span>&copy; <span id="current-year"></span> This website was created by Gabe Mods. <br> This is a fan-made website. It is not affiliated with DreamWorks or Cressida Cowell. All characters, images, and trademarks belong to their respective owners.</span>
   </div>
 </footer>
+  <dialog id="settings-modal" class="settings-dialog">
+  <div class="modal-content">
+    <h2>Settings</h2>
+    <label for="theme-select">Theme</label>
+    <select id="theme-select">
+      <option value="system">System</option>
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+    <div class="modal-actions">
+  <button id="close-settings" class="close-button">Close</button>
+</div>
+ </div>
+</dialog>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
