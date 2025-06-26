@@ -1,7 +1,3 @@
-.settings-dialog:not([open]) {
-  display: none;
-}
-
 @keyframes scaleIn {
   from {
     opacity: 0;
@@ -37,25 +33,47 @@
   background-color: white;
   color: black;
   font-family: 'Roboto', sans-serif;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   z-index: 999;
-  animation: scaleIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(-20px) scale(0.9);
+  pointer-events: none;
+  transition:
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.settings-dialog.open {
   opacity: 1;
-  transform: scale(1);
-  transition: none;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
 }
 
-/* Only hide after closing animation finishes */
 .settings-dialog.closing {
-  animation: scaleOut 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 0;
+  transform: translateY(-20px) scale(0.9);
+  pointer-events: none;
 }
 
-.settings-dialog::backdrop {
+.backdrop {
+  position: fixed;
+  inset: 0;
   background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  z-index: 998;
+  transition: opacity 250ms ease;
+  pointer-events: none;
 }
+
+.backdrop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.backdrop.hidden {
+  display: none;
+}
+
 
 .settings-dialog select {
   width: 100%;
@@ -97,7 +115,11 @@ body.dark .settings-dialog select {
   appearance: none;
   text-align: center;
   box-shadow: inset 0 0 0 1px #d0d0d0;
-  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 /* Pressed effect */
@@ -114,6 +136,20 @@ body.dark .settings-dialog select {
 }
 
 body.dark .settings-dialog select:active {
+  background-color: #2a2a2a;
+  box-shadow: inset 0 0 0 2px #90caf9;
+}
+
+.settings-dialog select {
+  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.settings-dialog select:focus {
+  background-color: #e0ecff;
+  box-shadow: inset 0 0 0 2px #90caf9;
+}
+
+body.dark .settings-dialog select:focus {
   background-color: #2a2a2a;
   box-shadow: inset 0 0 0 2px #90caf9;
 }
@@ -150,7 +186,7 @@ body.dark .settings-dialog select:active {
   cursor: pointer;
   padding: 8px 16px;
   transition: color 0.2s ease;
-  border-radius: 4px;
+  border-radius: 50px;
 }
 
 .close-button:hover,

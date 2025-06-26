@@ -108,37 +108,47 @@ document.querySelectorAll('.scroll-row').forEach(row => {
 
 const settingsButton = document.getElementById('settings-button');
 const settingsModal = document.getElementById('settings-modal');
-const themeSelect = document.getElementById('theme-select');
+const closeButton = settingsModal.querySelector('.close-button');
+const backdrop = document.getElementById('backdrop');
 
-// ✅ Check if dialog API is supported
-if (typeof HTMLDialogElement === 'function' && settingsModal?.showModal) {
-  // ✅ Show the dialog when settings icon is clicked
-  settingsButton?.addEventListener('click', () => {
-    settingsModal.showModal();
+function openDialog() {
+  backdrop.classList.remove('hidden');
+  requestAnimationFrame(() => {
+    backdrop.classList.add('show');
   });
   
-  // ✅ Close the dialog when clicking outside the modal content
-  settingsModal.addEventListener('click', (e) => {
-    if (e.target === settingsModal) {
-      settingsModal.close();
-    }
-  });
-} else {
-  console.error('Your browser does not support <dialog>.');
+  if (!settingsModal.open) {
+    settingsModal.showModal();
+    requestAnimationFrame(() => {
+      settingsModal.classList.add('open');
+      settingsModal.classList.remove('closing');
+    });
+  }
 }
 
-const closeSettingsBtn = document.getElementById('close-settings');
-
-closeSettingsBtn.addEventListener('click', () => {
+function closeDialog() {
+  settingsModal.classList.remove('open');
   settingsModal.classList.add('closing');
-  settingsModal.addEventListener(
-    'transitionend',
-    () => {
-      settingsModal.close();
-      settingsModal.classList.remove('closing');
-    },
-    { once: true }
-  );
+  backdrop.classList.remove('show');
+  
+  setTimeout(() => {
+    settingsModal.close();
+    backdrop.classList.add('hidden');
+  }, 250); // match CSS transition duration
+}
+
+settingsButton.addEventListener('click', openDialog);
+closeButton.addEventListener('click', closeDialog);
+
+settingsModal.addEventListener('click', e => {
+  if (e.target === settingsModal) {
+    closeDialog();
+  }
+});
+
+settingsModal.addEventListener('cancel', e => {
+  e.preventDefault();
+  closeDialog();
 });
 
 function applyPreferredTheme(value) {
