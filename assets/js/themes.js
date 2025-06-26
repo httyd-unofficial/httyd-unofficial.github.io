@@ -32,14 +32,3 @@ function setupSystemThemeListener() {
     }
   };
 }
-
-const savedTheme = localStorage.getItem('theme') || 'system';
-themeSelect.value = savedTheme;
-applyThemeClass(savedTheme);
-setupSystemThemeListener();
-
-themeSelect.addEventListener('change', () => {
-  const selectedTheme = themeSelect.value;
-  localStorage.setItem('theme', selectedTheme);
-  applyThemeClass(selectedTheme);
-});
