@@ -98,3 +98,23 @@ document.querySelectorAll('.scroll-row').forEach(row => {
     }, 100);
   });
 });
+
+// Hero button toggle on scroll
+const heroCarousel = document.querySelector('.hero-carousel');
+const heroButton = document.querySelector('.hero-button');
+
+if (heroCarousel && heroButton) {
+  heroCarousel.addEventListener('scroll', () => {
+    const atFirstSlide = heroCarousel.scrollLeft < heroCarousel.clientWidth / 2;
+    
+    if (atFirstSlide) {
+      heroButton.style.opacity = '1';
+      heroButton.style.pointerEvents = 'auto';
+      heroButton.disabled = false;
+    } else {
+      heroButton.style.opacity = '0';
+      heroButton.style.pointerEvents = 'none';
+      heroButton.disabled = true;
+    }
+  });
+}

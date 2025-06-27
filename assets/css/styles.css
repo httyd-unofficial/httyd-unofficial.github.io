@@ -136,10 +136,60 @@ body.dark .main-header.scrolled {
 }
 
 /* === Hero Section === */
-.hero-banner {
-  position: relative;
+/* === Hero Carousel === */
+.hero-carousel {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
   margin-top: 50px;
-  overflow: hidden;
+}
+
+.hero-track {
+  display: flex;
+  width: 200%;
+}
+
+.hero-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 40px;
+  left: 35px;
+  color: transparent;
+  background: transparent;
+  padding: 5px;
+  border-radius: 12px;
+  max-width: 80%;
+}
+
+.hero-button {
+  display: inline-block;
+  background: var(--transparent-button);
+  color: transparent;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.5s ease, transform 0.5s ease, opacity 0.3s ease;
+}
+
+.hero-button:active {
+  background: var(--transparent-button);
+  transform: scale(1.07);
 }
 
 .hero-banner img {
