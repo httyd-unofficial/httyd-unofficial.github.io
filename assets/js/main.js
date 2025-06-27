@@ -1,14 +1,3 @@
-// Header Animation
-const header = document.querySelector('.main-header');
-
-window.addEventListener('scroll', () => {
-  const scrolledDown = window.scrollY > 10;
-  if (header) {
-    header.classList.toggle('scrolled', scrolledDown);
-    header.classList.toggle('shrink', scrolledDown);
-  }
-});
-
 const searchIcon = document.getElementById('search-icon');
 const searchOverlay = document.querySelector('.search-overlay');
 const closeBtn = document.getElementById('close-search');

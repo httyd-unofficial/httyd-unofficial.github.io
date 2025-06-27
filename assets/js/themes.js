@@ -1,4 +1,3 @@
-// Get references
 const themeSelect = document.getElementById('theme-select');
 const metaColor = document.querySelector('meta[name="theme-color"]');
 

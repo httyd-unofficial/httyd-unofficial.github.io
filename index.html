@@ -49,7 +49,7 @@
 </script>
   </head>
   <body>
-  <header class="main-header">
+  <header class="main-header translucent">
   <div class="header-inner">
     <!-- Image Title -->
     <div class="title-container image-title-container">
@@ -594,6 +594,15 @@
       <option value="light">Light</option>
       <option value="dark">Dark</option>
     </select>
+    <div class="setting-row">
+  <div class="toggle-setting">
+  <span class="setting-label">Translucency</span>
+  <label class="switch">
+    <input type="checkbox" id="translucency-toggle">
+    <span class="slider"></span>
+  </label>
+</div>
+</div>
     <div class="modal-actions">
   <button id="close-settings" class="close-button">Close</button>
 </div>
@@ -602,5 +611,6 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/material-dialog.js"></script>
   <script src="assets/js/themes.js"></script>
+  <script src="assets/js/header.js"></script>
 </body>
 </html>

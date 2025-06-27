@@ -1,4 +1,3 @@
-/* === Fonts & Variables === */
 @font-face {
   font-family: "OneUISans";
   src: url("https://raw.githubusercontent.com/gabemods/about/main/assets/fonts/%28Regular%29%20One%20UI%20Sans.ttf") format("truetype");  font-weight: 400;
@@ -16,8 +15,9 @@
   --bg-dark: #121212;
   --text-light: #111;
   --text-dark: #eee;
-  --header-bg-light: rgba(250, 250, 250, 0.0);
+  --header-bg-light: rgba(250, 250, 250, 0.7);
   --header-bg-dark: rgba(18, 18, 18, 0.7);
+  --solid-bg: #ffffff;
   --accent: #1a73e8;
   --accent: #e0a100;
   --red-accent: #b22222;
@@ -52,6 +52,9 @@ body.dark {
   background: var(--bg-dark);
   color: var(--text-dark);
   --text: var(--text-dark);
+  body.dark {
+  --solid-bg: #121212;
+}
 }
 
 /* === Header === */
@@ -67,6 +70,7 @@ body.dark {
   padding: 16px 24px;
   z-index: 200;
   transition: padding var(--transition), backdrop-filter var(--transition), background var(--transition);
+  transition: padding 0.25s ease, backdrop-filter 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 body.dark .main-header {
@@ -76,6 +80,7 @@ body.dark .main-header {
 .main-header.shrink {
   padding: 8px 24px;
   backdrop-filter: blur(20px);
+  transition: padding 0.25s ease, backdrop-filter 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .main-header.scrolled {
@@ -84,6 +89,36 @@ body.dark .main-header {
 
 body.dark .main-header.scrolled {
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+.main-header.translucent {
+  background-color: var(--header-bg-light);
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+body.dark .main-header.translucent {
+  background-color: var(--header-bg-dark);
+}
+
+.main-header.no-translucency {
+  background-color: var(--solid-bg);
+  backdrop-filter: none;
+}
+
+.main-header.scrolled {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-header.shrink {
+  padding: 6px 16px;
+}
+
+:root {
+  --solid-bg: #ffffff;
+}
+
+body.dark .no-translucency {
+  background-color: #121212 !important;
 }
 
 .header-inner {
@@ -136,7 +171,6 @@ body.dark .main-header.scrolled {
 }
 
 /* === Hero Section === */
-/* === Hero Carousel === */
 .hero-carousel {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -256,7 +290,7 @@ section h2.shrink-margin {
 }
 
 .scroll-wrapper {
-  overflow: hidden; /* hides the side padding area */
+  overflow: hidden;
 }
 
 .scroll-row {
@@ -589,7 +623,7 @@ body.dark .dragon-library {
   color: var(--accent);
 }
 
-/* === Thank You Message - Enhanced === */
+/* === Thank You Message === */
 .thank-you {
   padding: 5px 5vw;
   background: var(--bg-light);

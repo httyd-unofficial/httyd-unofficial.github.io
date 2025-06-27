@@ -26,7 +26,7 @@ function closeDialog() {
   setTimeout(() => {
     settingsModal.close();
     backdrop.classList.add('hidden');
-  }, 250); // match CSS transition duration
+  }, 250);
 }
 
 settingsButton.addEventListener('click', openDialog);
