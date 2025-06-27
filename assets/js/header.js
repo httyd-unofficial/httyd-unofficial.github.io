@@ -27,3 +27,29 @@ translucencyToggle.addEventListener('change', () => {
     el.classList.toggle('no-translucency', !enabled);
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.main-header');
+  const translucencyToggle = document.getElementById('translucency-toggle');
+  
+  // Apply saved translucency setting
+  const isTranslucent = localStorage.getItem('translucent') !== 'false';
+  header.classList.toggle('translucent', isTranslucent);
+  header.classList.toggle('no-translucency', !isTranslucent);
+  translucencyToggle.checked = isTranslucent;
+  
+  // Toggle handler
+  translucencyToggle.addEventListener('change', () => {
+    const enabled = translucencyToggle.checked;
+    header.classList.toggle('translucent', enabled);
+    header.classList.toggle('no-translucency', !enabled);
+    localStorage.setItem('translucent', enabled);
+  });
+  
+  // Scroll listener
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 10;
+    header.classList.toggle('scrolled', scrolled);
+    header.classList.toggle('shrink', scrolled);
+  });
+});
