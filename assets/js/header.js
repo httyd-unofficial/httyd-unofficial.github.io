@@ -1,55 +1,11 @@
-// Header Animation
-const header = document.querySelector('.main-header');
-
-window.addEventListener('scroll', () => {
-  const scrolledDown = window.scrollY > 10;
-  if (header) {
-    header.classList.toggle('scrolled', scrolledDown);
-    header.classList.toggle('shrink', scrolledDown);
-  }
-});
-
-const translucencyToggle = document.getElementById('translucency-toggle');
-const translucentElements = document.querySelectorAll('.translucent');
-
-// Load setting from localStorage
-const savedTranslucency = localStorage.getItem('translucency');
-if (savedTranslucency === 'off') {
-  translucencyToggle.checked = false;
-  translucentElements.forEach(el => el.classList.add('no-translucency'));
-}
-
-// Update on toggle
-translucencyToggle.addEventListener('change', () => {
-  const enabled = translucencyToggle.checked;
-  localStorage.setItem('translucency', enabled ? 'on' : 'off');
-  translucentElements.forEach(el => {
-    el.classList.toggle('no-translucency', !enabled);
-  });
-});
-
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.main-header');
-  const translucencyToggle = document.getElementById('translucency-toggle');
-  
-  // Apply saved translucency setting
-  const isTranslucent = localStorage.getItem('translucent') !== 'false';
-  header.classList.toggle('translucent', isTranslucent);
-  header.classList.toggle('no-translucency', !isTranslucent);
-  translucencyToggle.checked = isTranslucent;
-  
-  // Toggle handler
-  translucencyToggle.addEventListener('change', () => {
-    const enabled = translucencyToggle.checked;
-    header.classList.toggle('translucent', enabled);
-    header.classList.toggle('no-translucency', !enabled);
-    localStorage.setItem('translucent', enabled);
-  });
-  
-  // Scroll listener
-  window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY > 10;
-    header.classList.toggle('scrolled', scrolled);
-    header.classList.toggle('shrink', scrolled);
-  });
+
+  if (header) {
+    window.addEventListener('scroll', () => {
+      const scrolledDown = window.scrollY > 10;
+      header.classList.toggle('scrolled', scrolledDown);
+      header.classList.toggle('shrink', scrolledDown);
+    });
+  }
 });

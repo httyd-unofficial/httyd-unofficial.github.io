@@ -145,8 +145,8 @@ body.dark .settings-dialog select:focus {
   background: none;
   border: none;
   color: #1a73e8;
-  font: inherit;
-  font-weight: 500;
+  font: "Open Sans";
+  font-weight: 600;
   font-size: 16px;
   cursor: pointer;
   padding: 8px 16px;
@@ -156,6 +156,26 @@ body.dark .settings-dialog select:focus {
 
 .close-button:hover,
 .close-button:focus {
+  color: #174ea6;
+  background-color: rgba(26, 115, 232, 0.08);
+  outline: none;
+}
+
+.reset-button {
+  background: none;
+  border: none;
+  color: #1a73e8;
+  font: "Open Sans";
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: color 0.2s ease;
+  border-radius: 50px;
+}
+
+.rese-button:hover,
+.reset-button:focus {
   color: #174ea6;
   background-color: rgba(26, 115, 232, 0.08);
   outline: none;
