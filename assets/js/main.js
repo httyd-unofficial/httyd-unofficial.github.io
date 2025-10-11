@@ -42,7 +42,6 @@ function toggleTitle() {
 imageTitleContainer.addEventListener('click', toggleTitle);
 textTitleContainer.addEventListener('click', toggleTitle);
 
-// Scroll Wrapper Padding
 document.querySelectorAll('.scroll-wrapper').forEach(wrapper => {
   const row = wrapper.querySelector('.scroll-row');
   
@@ -68,7 +67,6 @@ document.querySelectorAll('.scroll-wrapper').forEach(wrapper => {
   updatePadding();
 });
 
-// Section h2 margin animation
 document.querySelectorAll('.scroll-row').forEach(row => {
   const section = row.closest('section');
   const h2 = section?.querySelector('h2');
@@ -88,7 +86,6 @@ document.querySelectorAll('.scroll-row').forEach(row => {
   });
 });
 
-// Hero button toggle on scroll
 const heroCarousel = document.querySelector('.hero-carousel');
 const heroButton = document.querySelector('.hero-button');
 
