@@ -51,17 +51,14 @@
   <body>
   <header class="main-header translucent">
   <div class="header-inner">
-    <!-- Image Title -->
     <div class="title-container image-title-container">
       <img src="assets/images/httyd-title.png" alt="HTTYD Title" class="image-title" />
     </div>
     
-    <!-- Text Title -->
     <div class="title-container text-title-container hidden">
       <h1 class="text-title">How to Train Your Dragon</h1>
     </div>
     
-    <!-- Icons aligned together -->
     <div class="header-icons">
       <button id="search-icon" aria-label="Open Search">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
@@ -69,8 +66,7 @@
           <line x1="16.65" y1="16.65" x2="21" y2="21" />
         </svg>
       </button>
-      
-      <!-- Settings icon -->
+
       <md-icon-button id="settings-button" aria-label="Settings">
         <md-icon>settings</md-icon>
       </md-icon-button>
@@ -85,7 +81,6 @@
 </div>
 <section class="hero-carousel">
   <div class="hero-track">
-    <!-- Slide 1: With Button -->
     <div class="hero-slide">
       <img src="assets/images/httyd-banner.jpeg" alt="How to Train Your Dragon Movie Banner">
       <div class="hero-content">
@@ -95,7 +90,6 @@
       </div>
     </div>
     
-    <!-- Slide 2: No Button -->
     <div class="hero-slide">
       <img src="assets/images/httyd-2-banner.jpeg" alt="Alternate Banner">
     </div>
@@ -324,12 +318,9 @@
     <section class="character-section">
   <div class="container">
     <h2>Characters, Villains & Dragons</h2>
-    
     <div class="media-split">
-      <!-- === Books === -->
       <div class="media-group">
         <h3>Books</h3>
-        
          <ul>
            <li>
         <h4>Characters</h4>
@@ -358,7 +349,6 @@
         </ul>
     </li>
     </ul>
-
         
         <h4>Villains</h4>
         <ul>
@@ -382,7 +372,6 @@
         </ul>
       </div>
       
-      <!-- === Films / Shows === -->
       <div class="media-group">
         <h3>Films / Shows</h3>
         
@@ -446,7 +435,6 @@
     <h2>Dragon Library</h2>
     
     <div class="media-split">
-      <!-- === Books === -->
       <div class="media-group">
         <h3>Books</h3>
         <h4>Dragon Species</h4>
@@ -500,8 +488,6 @@
 <li>Wodensfang</li>
         </ul>
       </div>
-      
-      <!-- === Films / Shows === -->
       <div class="media-group">
         <h3>Films / Shows</h3>
         <h4>Dragon Species</h4>
@@ -578,46 +564,73 @@
     </p>
   </div>
 </section>
-  <footer>
-  <div class="container">
-    <hr class="custom-divider">
-    <span>&copy; <span id="current-year"></span> This website was created by Gabe Mods. <br> This is a fan-made website. It is not affiliated with DreamWorks or Cressida Cowell. All characters, images, and trademarks belong to their respective owners.</span>
+<footer class="footer">
+  <div class="footer-top">
+    <h2 class="footer-title">HTTYD Unofficial</h2>
+    <p class="footer-description">
+      This is a fan-made website. It is not affiliated with DreamWorks or Cressida Cowell. All characters, images, and trademarks belong to their respective owners.
+    </p>
+  </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>
+      © <span id="year"></span> The Gospel. All rights reserved.
+      Website created and maintained by
+      <a class="name" href="https://gabriellongshaw.co.uk/" target="_blank" rel="noopener">Gabriel Longshaw</a>.
+    </p>
+    <p class="meta">
+      Jesus said to him, “I am the way, the truth, and the life. No one comes to the Father except through Me.” ‭‭John‬‭ 14‬:‭6 NKJV‬‬
+    </p>
   </div>
 </footer>
   <div id="backdrop" class="backdrop hidden"></div>
-  <dialog id="settings-modal" class="settings-dialog">
-  <div class="modal-content">
+<dialog id="settings-modal" class="settings-dialog">
+  <div class="modal-header">
+    <div class="icon-placeholder">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#49454F">
+        <path d="M0 0h24v24H0V0z" fill="none" />
+        <path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.09-.76-1.71-1.05l-.48-2.61c-.04-.2-.23-.35-.44-.35h-4c-.21 0-.4.15-.44.35l-.48 2.61c-.63.29-1.2.65-1.71 1.05l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.12.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.09.76 1.71 1.05l.48 2.61c.04.2.23.35.44.35h4c.21 0 .4-.15.44-.35l.48-2.61c.63-.29 1.2-.65 1.71-1.05l2.49 1c.22.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" />
+      </svg>
+    </div>
     <h2>Settings</h2>
-    <label for="theme-select">Theme</label>
-    <select id="theme-select">
-      <option value="system">System</option>
-      <option value="light">Light</option>
-      <option value="dark">Dark</option>
-    </select>
+  </div>
+  
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="theme-select">Theme</label>
+      <select id="theme-select">
+        <option value="system">System</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+    
     <div class="setting-row">
-  <div class="toggle-setting">
-  <span class="setting-label">Translucency</span>
-  <label class="switch">
-    <input type="checkbox" id="translucency-toggle">
-    <span class="slider"></span>
-  </label>
-</div>
-</div>
-<div class="setting-row">
-  <label for="font-select">Font</label>
-  <select id="font-select">
-    <option value="system">System Default</option>
-    <option value="OneUISans">OneUISans</option>
-    <option value="Roboto">Roboto</option>
-    <option value="Open Sans">Open Sans</option>
-  </select>
-</div>
-
+      <div class="toggle-setting">
+        <span class="setting-label">Translucent header</span>
+        <label class="switch">
+          <input type="checkbox" id="translucency-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="font-select">Font</label>
+      <select id="font-select">
+        <option value="system">System Default</option>
+        <option value="OneUISans">OneUISans</option>
+        <option value="Roboto">Roboto</option>
+        <option value="Open Sans">Open Sans</option>
+      </select>
+    </div>
+    
     <div class="modal-actions">
-  <button id="reset-settings-button" class="reset-button">Reset</button>
-  <button id="close-settings" class="close-button">Close</button>
-</div>
- </div>
+      <button id="reset-settings-button" class="button secondary-button">Reset</button>
+      <button id="close-settings" class="button primary-button">Close</button>
+    </div>
+  </div>
 </dialog>
 <div id="content-fade-overlay"></div>
   <script type="module" src="assets/js/main.js"></script>

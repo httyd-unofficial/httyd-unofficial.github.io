@@ -1,6 +1,6 @@
 const settingsButton = document.getElementById('settings-button');
 const settingsModal = document.getElementById('settings-modal');
-const closeButton = settingsModal.querySelector('.close-button');
+const closeButton = settingsModal.querySelector('#close-settings');
 const resetButton = settingsModal.querySelector('#reset-settings-button');
 const backdrop = document.getElementById('backdrop');
 
@@ -13,6 +13,8 @@ function _openDialogInternal() {
     console.error("backdrop element not found in material-dialog.js");
     return;
   }
+  
+  document.body.classList.add('dialog-open'); 
   
   backdrop.classList.remove('hidden');
   requestAnimationFrame(() => {
@@ -46,8 +48,12 @@ function _closeDialogInternal() {
     settingsModal.close();
     backdrop.classList.add('hidden');
     settingsModal.classList.remove('closing');
+
+    document.body.classList.remove('dialog-open'); 
+    
   }, 250);
 }
+
 
 export function openDialogAsync() {
   return new Promise(resolve => {
