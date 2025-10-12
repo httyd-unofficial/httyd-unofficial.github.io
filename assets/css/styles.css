@@ -547,18 +547,14 @@ body.dark .card {
 
 .hero-content {
   position: absolute;
-  bottom: 40px;
-  left: 35px;
+  bottom: 2.2rem;
+  left: 1.5rem;
   color: var(--text); 
-  background: rgba(0, 0, 0, 0.4); 
-  padding: 10px 15px;
+  background: transparent; 
+  padding: 0.5rem 1rem;
   border-radius: 12px;
   max-width: 80%;
   transition: background var(--transition);
-}
-
-body.dark .hero-content {
-    background: rgba(255, 255, 255, 0.2);
 }
 
 .hero-content h2 {
