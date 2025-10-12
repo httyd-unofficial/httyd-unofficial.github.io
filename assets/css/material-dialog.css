@@ -1,22 +1,46 @@
 :root {
-  --md-icon-font: Material Symbols Rounded; 
-  --transition: all 0.2s ease-out; 
-  --dialog-bg: #202020; 
-  --dialog-text: #E0E0E0; 
-  --dialog-secondary-text: #B0B0B0; 
-  --select-bg: #303030; 
-  --select-text: #E0E0E0; 
-  --select-border-initial: #303030; 
-  --select-active-bg: #404040; 
-  --select-active-border: #8AB4F8; 
-  --select-arrow-color: #B0B0B0; 
-  --button-text: #8AB4F8; 
-  --button-hover-bg: rgba(138, 180, 248, 0.1); 
-  --settings-icon-color: #B0B0B0; 
+  --md-icon-font: Material Symbols Rounded;
+  --transition: all 0.2s ease-out;
+  --dialog-bg: #FFFFFF;
+  --dialog-text: #202020;
+  --dialog-secondary-text: #757575;
+  --select-bg: #F0F0F0;
+  --select-text: #202020;
+  --select-border-initial: #CCCCCC;
+  --select-active-bg: #E0E0E0;
+  --select-active-border: #1A73E8;
+  --select-arrow-color: #757575;
+  --button-text: #1A73E8;
+  --button-hover-bg: rgba(26, 115, 232, 0.1);
+  --settings-icon-color: #757575;
   --amoled-bg: #000000;
-  --slider-bg-off: #444;
-  --slider-border-off: #555;
-  --slider-toggle-off: #E0E0E0;
+  --slider-bg-off: #E5E0E8;
+  --slider-border-off: #9E9E9E;
+  --slider-toggle-off: #9E9E9E;
+  --slider-bg-on: #1A73E8;
+  --slider-border-on: #1A73E8;
+  --slider-toggle-on: #FFFFFF;
+}
+
+body.dark {
+  --md-icon-font: Material Symbols Rounded;
+  --transition: all 0.2s ease-out;
+  --dialog-bg: #202020;
+  --dialog-text: #E0E0E0;
+  --dialog-secondary-text: #B0B0B0;
+  --select-bg: #303030;
+  --select-text: #E0E0E0;
+  --select-border-initial: #303030;
+  --select-active-bg: #404040;
+  --select-active-border: #8AB4F8;
+  --select-arrow-color: #B0B0B0;
+  --button-text: #8AB4F8;
+  --button-hover-bg: rgba(138, 180, 248, 0.1);
+  --settings-icon-color: #B0B0B0;
+  --amoled-bg: #000000;
+  --slider-bg-off: #48454E;
+  --slider-border-off: #918F97;
+  --slider-toggle-off: #918F97;
   --slider-bg-on: #8AB4F8;
   --slider-border-on: #8AB4F8;
   --slider-toggle-on: #FFFFFF;
@@ -264,7 +288,7 @@ body.amoled-dark-mode .settings-dialog select {
 .setting-label {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--dialog-text); 
+  color: var(--dialog-text);
   flex-grow: 1;
   margin-right: 16px;
   text-align: left;
@@ -292,37 +316,49 @@ body.amoled-dark-mode .settings-dialog select {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--slider-bg-off); 
-  transition: background-color 0.3s ease;
-  border-radius: 34px;
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+  border-radius: 16px;
   cursor: pointer;
+}
+
+.slider {
+  background-color: var(--slider-bg-off);
   border: 2px solid var(--slider-border-off);
+}
+
+input:checked+.slider {
+  background-color: var(--slider-bg-on);
+  border-color: var(--slider-bg-on);
 }
 
 .slider:before {
   content: "";
   position: absolute;
-  height: 20px;
-  width: 20px;
-  bottom: 4px;
-  left: 4px;
-  background-color: var(--slider-toggle-off); 
+  height: 16px;
+  width: 16px;
+  bottom: 6px;
+  left: 6px;
+  background-color: var(--slider-toggle-off);
   border-radius: 50%;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease-out, background-color 0.15s ease-out;
+  box-shadow: none;
 }
 
-input:checked + .slider {
-  background-color: var(--slider-bg-on); 
-  border-color: var(--slider-border-on);
-}
-
-input:checked + .slider:before {
+input:checked+.slider:before {
   transform: translateX(20px);
   background-color: var(--slider-toggle-on);
+  height: 24px;
+  width: 24px;
+  bottom: 2px;
+  left: 2px;
 }
 
-.switch input:focus-visible + .slider {
-    outline: 2px solid var(--slider-bg-on); 
-    outline-offset: 2px;
+.switch input:focus-visible+.slider {
+  outline: 2px solid var(--slider-bg-on);
+  outline-offset: 2px;
+  
+}
+
+.switch input:focus-visible+.slider:before {
+  box-shadow: 0 0 0 8px var(--toggle-ripple-color);
 }
