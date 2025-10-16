@@ -433,6 +433,7 @@ body.dark .card {
   color: var(--text);
   border: 1px solid var(--border);
   border-radius: 12px;
+  margin-bottom: 2rem;
 }
 
 .character-section .container, .dragon-library .container {
