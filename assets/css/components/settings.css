@@ -132,7 +132,6 @@
   line-height: 1.4;
 }
 
-/* Theme grid */
 .theme-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -257,7 +256,6 @@
   transform: scale(1);
 }
 
-/* Toggle row */
 .setting-row {
   display: flex;
   justify-content: space-between;
@@ -283,7 +281,6 @@
   line-height: 1.35;
 }
 
-/* Toggle switch */
 .toggle-switch {
   position: relative;
   display: inline-block;

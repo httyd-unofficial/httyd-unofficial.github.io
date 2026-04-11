@@ -2,48 +2,44 @@
   .thank-you h2 {
     font-size: 1.5rem;
   }
-
   .thank-you p {
     font-size: 0.95rem;
   }
-
-  .character-section,
-  .dragon-library {
+  .info-section {
     margin: 0 0.5rem;
   }
-
   .media-split {
     flex-direction: column;
   }
 }
 
 @media (max-width: 480px) {
-  .main-header {
-    padding: 12px 16px;
+  :root {
+    --header-height: 60px;
   }
-
-  .main-header.scrolled {
+  .header {
+    padding: 14px 20px;
+  }
+  .header.scrolled {
     padding: 8px 16px;
   }
-
   section h2 {
     margin-left: 16px;
     font-size: 1.1rem;
   }
-
+  .section-label {
+    margin-left: 16px;
+  }
   .thank-you {
     margin: 1rem 0.5rem;
   }
-
   .theme-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .settings-body {
     padding: 1.25rem;
     gap: 2rem;
   }
-
   .settings-header {
     padding: 0.875rem 1.25rem;
   }
@@ -53,7 +49,6 @@
   .hero-slide img {
     max-height: 280px;
   }
-
   .settings-content {
     max-height: 90vh;
   }

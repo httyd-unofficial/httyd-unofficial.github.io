@@ -31,6 +31,7 @@
   --shape-ease: cubic-bezier(0.2, 0, 0, 1);
   --shape-duration: 0.3s;
   --transition: 0.2s ease-in-out;
+  --header-height: 72px;
   --z-index-header: 900;
   --z-index-settings: 2000;
   --z-index-search: 1000;

@@ -1,11 +1,11 @@
-.main-header {
+.header {
   font-family: "HTTYD-Font";
   font-weight: 900;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  padding: 14px 24px;
+  padding: 20px 32px;
   z-index: var(--z-index-header);
   will-change: padding, background-color, backdrop-filter;
   transition: padding 0.3s ease, backdrop-filter 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
@@ -15,13 +15,13 @@
   border-bottom: 1px solid transparent;
 }
 
-.main-header.scrolled {
-  padding: 8px 204px;
+.header.scrolled {
+  padding: 10px 28px;
   border-bottom-color: var(--border);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
 }
 
-body.no-blur .main-header {
+body.no-blur .header {
   background: var(--header-bg-solid);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
