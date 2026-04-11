@@ -1,0 +1,60 @@
+@media (max-width: 768px) {
+  .thank-you h2 {
+    font-size: 1.5rem;
+  }
+
+  .thank-you p {
+    font-size: 0.95rem;
+  }
+
+  .character-section,
+  .dragon-library {
+    margin: 0 0.5rem;
+  }
+
+  .media-split {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    padding: 12px 16px;
+  }
+
+  .main-header.scrolled {
+    padding: 8px 16px;
+  }
+
+  section h2 {
+    margin-left: 16px;
+    font-size: 1.1rem;
+  }
+
+  .thank-you {
+    margin: 1rem 0.5rem;
+  }
+
+  .theme-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .settings-body {
+    padding: 1.25rem;
+    gap: 2rem;
+  }
+
+  .settings-header {
+    padding: 0.875rem 1.25rem;
+  }
+}
+
+@media (max-width: 812px) and (orientation: landscape) {
+  .hero-slide img {
+    max-height: 280px;
+  }
+
+  .settings-content {
+    max-height: 90vh;
+  }
+}

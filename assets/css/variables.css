@@ -1,0 +1,95 @@
+:root {
+  --bg: #fafafa;
+  --header-bg: rgba(250, 250, 250, 0.8);
+  --header-bg-solid: #fafafa;
+  --card-bg: #ffffff;
+  --card-bg-hover: #eee;
+  --footer-bg: #f3f3f3;
+  --button-bg: #000;
+  --button-text: #fff;
+  --button-secondary-bg: #efefef;
+  --button-secondary-text: #000;
+  --text: #111111;
+  --border: #e0e0e0;
+  --meta-text: rgba(17, 17, 17, 0.6);
+  --accent: #e0a100;
+  --overlay-bg: rgba(200, 200, 200, 0.8);
+  --search-input-bg: rgba(255, 255, 255, 0.3);
+  --settings-bg: #fff;
+  --settings-shadow: none;
+  --settings-toggle-off: #eeeeee;
+  --settings-toggle-on: #000;
+  --settings-knob: #fff;
+  --settings-knob-off: #79747e;
+  --solid-bg: #ffffff;
+  --search-overlay: rgba(255, 255, 255, 0.3);
+  --icon-color: #444;
+  --translucent-scrolled-header-bg: rgba(255, 255, 255, 0.8);
+  --fade-overlay-color: rgba(255, 255, 255, 1);
+  --shape-large: 24px;
+  --shape-small: 8px;
+  --shape-ease: cubic-bezier(0.2, 0, 0, 1);
+  --shape-duration: 0.3s;
+  --transition: 0.2s ease-in-out;
+  --z-index-header: 900;
+  --z-index-settings: 2000;
+  --z-index-search: 1000;
+}
+
+body.dark {
+  --bg: #121212;
+  --header-bg: rgba(18, 18, 18, 0.8);
+  --header-bg-solid: #151515;
+  --card-bg: #1e1e1e;
+  --card-bg-hover: #2a2a2a;
+  --footer-bg: #1e1e1e;
+  --button-bg: #fff;
+  --button-text: #000;
+  --button-secondary-bg: #2f2f2f;
+  --button-secondary-text: #fff;
+  --text: #eaeaea;
+  --border: #333;
+  --meta-text: rgba(234, 234, 234, 0.5);
+  --accent: #e0a100;
+  --overlay-bg: rgba(0, 0, 0, 0.8);
+  --search-input-bg: rgba(20, 20, 20, 0.3);
+  --settings-bg: #1a1a1a;
+  --settings-toggle-off: #222;
+  --settings-toggle-on: #fff;
+  --settings-knob: #000;
+  --settings-knob-off: #aaa;
+  --solid-bg: #121212;
+  --search-overlay: rgba(0, 0, 0, 0.3);
+  --icon-color: #eee;
+  --translucent-scrolled-header-bg: rgba(0, 0, 0, 0.6);
+  --fade-overlay-color: rgba(0, 0, 0, 1);
+}
+
+body.amoled-dark {
+  --bg: #000;
+  --header-bg: rgba(0, 0, 0, 1);
+  --header-bg-solid: #000;
+  --card-bg: #111;
+  --card-bg-hover: #1a1a1a;
+  --footer-bg: #101010;
+  --button-bg: #fff;
+  --button-text: #000;
+  --button-secondary-bg: #222;
+  --button-secondary-text: #fff;
+  --text: #eaeaea;
+  --border: #222;
+  --meta-text: rgba(234, 234, 234, 0.5);
+  --accent: #e0a100;
+  --overlay-bg: rgba(0, 0, 0, 1);
+  --search-input-bg: rgba(10, 10, 10, 0.5);
+  --settings-bg: #101010;
+  --settings-toggle-off: #111;
+  --settings-toggle-on: #fff;
+  --settings-knob: #000;
+  --settings-knob-off: #444;
+  --solid-bg: #000;
+  --search-overlay: rgba(0, 0, 0, 0.5);
+  --icon-color: #eee;
+  --translucent-scrolled-header-bg: rgba(0, 0, 0, 1);
+  --fade-overlay-color: rgba(0, 0, 0, 1);
+}

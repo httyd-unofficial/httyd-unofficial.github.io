@@ -1,0 +1,216 @@
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--overlay-bg);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  z-index: var(--z-index-search);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.05);
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.35s, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.35s ease;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.search-overlay::-webkit-scrollbar {
+  display: none;
+}
+
+.search-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.search-modal-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 2rem;
+  z-index: 20;
+}
+
+.search-modal-content.is-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-radius: 12px;
+}
+
+.search-modal-content.is-sticky::before {
+  content: "";
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  height: calc(100% + 4rem);
+  pointer-events: none;
+  z-index: -1;
+  background: var(--header-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  opacity: 0;
+  border-bottom: 1px solid var(--border);
+  transition: opacity 0.3s ease;
+}
+
+.search-overlay.scrolled-down .search-modal-content.is-sticky::before {
+  opacity: 1;
+}
+
+.search-input-full {
+  flex-grow: 1;
+  font-size: 1rem;
+  padding: 0.85rem 3rem 0.85rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--search-input-bg);
+  color: var(--text);
+  outline: none;
+  font-family: inherit;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s, transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s;
+}
+
+.search-overlay.active .search-input-full {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.search-close {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--text);
+  cursor: pointer;
+  padding: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
+  transform: scale(0.5) rotate(-90deg);
+  transition: opacity 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s;
+}
+
+.search-close:hover {
+  opacity: 1;
+}
+
+.search-overlay.active .search-close {
+  transform: scale(1) rotate(0deg);
+  opacity: 0.7;
+}
+
+/* Results */
+#search-results-container {
+  width: 100%;
+  max-width: 900px;
+}
+
+.search-results-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+.search-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  padding: 0 0 2rem;
+}
+
+.no-results-msg {
+  text-align: center;
+  width: 100%;
+  margin-top: 3rem;
+  color: var(--meta-text);
+  font-size: 0.95rem;
+}
+
+.search-result-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, background 0.2s ease;
+  cursor: default;
+}
+
+.search-result-card:hover {
+  transform: translateY(-2px);
+  background: var(--card-bg-hover);
+}
+
+.search-result-card img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  display: block;
+}
+
+.search-result-card .content {
+  padding: 10px 12px;
+}
+
+.search-result-card h3 {
+  margin: 0 0 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.search-result-card p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--meta-text);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.fade-in-slide {
+  animation: fadeInSlide 0.25s ease forwards;
+}
+
+@keyframes fadeInSlide {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-out-slide {
+  animation: fadeOutSlide 0.18s ease forwards;
+}
+
+@keyframes fadeOutSlide {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-6px); }
+}
+
+body.no-blur .search-overlay {
+  background: var(--bg);
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
