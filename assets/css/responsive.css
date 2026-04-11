@@ -5,9 +5,6 @@
   .thank-you p {
     font-size: 0.95rem;
   }
-  .info-section {
-    margin: 0 0.5rem;
-  }
   .media-split {
     flex-direction: column;
   }
