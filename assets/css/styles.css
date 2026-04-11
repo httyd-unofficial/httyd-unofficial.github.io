@@ -111,7 +111,6 @@ body.font-Berk-Font {
 
 .main-header.scrolled {
   padding: 8px 24px; 
-  box-shadow: 0 2px 8px var(--border);
   backdrop-filter: blur(20px); 
 }
 
