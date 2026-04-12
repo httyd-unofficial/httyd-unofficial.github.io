@@ -192,7 +192,8 @@ main {
 }
 
 .info-section {
-  margin: 0 20px 32px;
+  max-width: 960px;
+  margin: 0 auto 32px;
   padding: 2rem;
   background: var(--card-bg);
   border: 1px solid var(--border);
@@ -201,7 +202,7 @@ main {
 }
 
 .info-inner {
-  max-width: 920px;
+  max-width: 880px;
   margin: 0 auto;
 }
 
@@ -219,10 +220,12 @@ main {
   display: flex;
   gap: 2.5rem;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .media-group {
   flex: 1 1 280px;
+  min-width: 0;
 }
 
 .media-group h3 {
@@ -279,7 +282,8 @@ main {
 }
 
 .thank-you {
-  margin: 0 20px 2.5rem;
+  max-width: 960px;
+  margin: 0 auto 2.5rem;
   padding: 2.5rem 1.5rem;
   background: var(--card-bg);
   border: 1px solid var(--border);
