@@ -32,6 +32,7 @@
   --shape-duration: 0.3s;
   --transition: 0.2s ease-in-out;
   --header-height: 72px;
+  --page-padding: 20px;
   --z-index-header: 900;
   --z-index-settings: 2000;
   --z-index-search: 1000;

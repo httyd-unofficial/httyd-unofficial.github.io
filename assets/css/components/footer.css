@@ -1,0 +1,66 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--footer-bg);
+  color: var(--text);
+  padding: 2rem var(--page-padding) 1.5rem;
+  font-size: 0.82rem;
+  border-top: 1px solid var(--border);
+  transition: background var(--transition), color var(--transition);
+}
+
+.footer-top {
+  max-width: 560px;
+  margin: 0 auto 1.5rem;
+}
+
+.footer-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.footer-description {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--meta-text);
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  max-width: 560px;
+  width: 100%;
+  font-size: 0.78rem;
+  color: var(--meta-text);
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-bottom .name {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
+.footer .meta {
+  font-style: italic;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer a:hover {
+  opacity: 0.8;
+}

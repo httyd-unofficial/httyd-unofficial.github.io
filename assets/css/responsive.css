@@ -1,18 +1,31 @@
-@media (max-width: 768px) {
-  .thank-you h2 {
-    font-size: 1.5rem;
+@media (min-width: 600px) {
+  :root {
+    --page-padding: 28px;
   }
-  .thank-you p {
-    font-size: 0.95rem;
-  }
-  .media-split {
-    flex-direction: column;
+  .card {
+    flex: 0 0 175px;
   }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 900px) {
+  :root {
+    --page-padding: 40px;
+  }
+  .card {
+    flex: 0 0 185px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --page-padding: 56px;
+  }
+}
+
+@media (max-width: 599px) {
   :root {
     --header-height: 60px;
+    --page-padding: 16px;
   }
   .header {
     padding: 14px 20px;
@@ -20,18 +33,22 @@
   .header.scrolled {
     padding: 8px 16px;
   }
-  section h2 {
-    margin-left: 16px;
+  .section-heading {
     font-size: 1.1rem;
   }
-  .section-label {
-    margin-left: 16px;
+  .info-section {
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
   .thank-you {
-    margin: 1rem 0.5rem;
-  }
-  .theme-grid {
-    grid-template-columns: repeat(2, 1fr);
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
   .settings-body {
     padding: 1.25rem;
@@ -40,12 +57,18 @@
   .settings-header {
     padding: 0.875rem 1.25rem;
   }
+  .theme-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .media-split {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 812px) and (orientation: landscape) {
-  .hero-slide img {
-    max-height: 280px;
-  }
   .settings-content {
     max-height: 90vh;
   }

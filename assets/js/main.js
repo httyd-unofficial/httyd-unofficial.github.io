@@ -1,3 +1,5 @@
+import { createHeader } from './components/header.js';
+import { createFooter } from './components/footer.js';
 import { createSettingsMenu } from './components/settingsMenu.js';
 import { createSearchOverlay } from './components/searchOverlay.js';
 import { applyTheme, getStoredTheme, setTheme, updateThemeCheckmarks } from './core/theme.js';
@@ -6,6 +8,8 @@ import { lockScroll, unlockScroll } from './core/utils.js';
 import { renderSections } from './core/render.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+  createHeader();
+  createFooter();
   createSettingsMenu();
   createSearchOverlay();
   renderSections();
@@ -83,15 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
     textTitleContainer.addEventListener('click', toggleTitle);
   }
 
-  const heroCarousel = document.querySelector('.hero-carousel');
-  const heroButton = document.querySelector('.hero-button');
-  if (heroCarousel && heroButton) {
-    heroCarousel.addEventListener('scroll', () => {
-      const atFirst = heroCarousel.scrollLeft < heroCarousel.clientWidth / 2;
-      heroButton.style.opacity = atFirst ? '1' : '0';
-      heroButton.style.pointerEvents = atFirst ? 'auto' : 'none';
-    }, { passive: true });
-  }
-
-  document.getElementById('current-year').textContent = new Date().getFullYear();
+  const yearEl = document.getElementById('current-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 });

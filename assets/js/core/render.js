@@ -5,7 +5,7 @@ function buildCard({ img, alt, title, description, badge }) {
   return `<div class="card">
     <img src="${img}" alt="${alt}" loading="lazy" />
     ${badge ? `<span class="card-badge">${badge}</span>` : ''}
-    <div class="content">
+    <div class="card-content">
       <h3>${title}</h3>
       <p>${description}</p>
     </div>
@@ -13,13 +13,11 @@ function buildCard({ img, alt, title, description, badge }) {
 }
 
 function buildScrollSection(label, heading, items) {
-  return `<section>
+  return `<section class="scroll-section">
     <span class="section-label">${label}</span>
-    <h2>${heading}</h2>
-    <div class="scroll-wrapper">
-      <div class="scroll-row">
-        ${items.map(buildCard).join('\n        ')}
-      </div>
+    <h2 class="section-heading">${heading}</h2>
+    <div class="scroll-row">
+      ${items.map(buildCard).join('\n      ')}
     </div>
   </section>`;
 }
@@ -31,7 +29,7 @@ function buildCharacterList(items, isMain = false) {
 function buildCharacterSection() {
   const { books: b, films: f } = characters;
   return `<section class="info-section">
-    <div class="container">
+    <div class="info-inner">
       <h2>Characters, Villains &amp; Dragons</h2>
       <div class="media-split">
         <div class="media-group">
@@ -78,7 +76,7 @@ function buildCharacterSection() {
 function buildLibrarySection() {
   const { books: b, films: f } = dragonSpecies;
   return `<section class="info-section">
-    <div class="container">
+    <div class="info-inner">
       <h2>Dragon Library</h2>
       <div class="media-split">
         <div class="media-group">
@@ -96,16 +94,49 @@ function buildLibrarySection() {
   </section>`;
 }
 
-export function renderSections() {
-  const main = document.querySelector('main');
-  if (!main) return;
+function buildHeroSection() {
+  return `<section class="hero-section">
+    <p class="hero-subtitle">Unofficial fan reference</p>
+    <h1 class="hero-title">How to Train<br>Your Dragon</h1>
+    <p class="hero-body">
+      Every book by <strong>Cressida Cowell</strong>, every DreamWorks film,
+      every series, and every special — all in one place.
+    </p>
+  </section>`;
+}
 
-  main.innerHTML = `
+function buildThankYouSection() {
+  return `<section class="thank-you">
+    <div class="info-inner">
+      <h2>Thank You</h2>
+      <p>
+        A heartfelt thank you to <strong>Cressida Cowell</strong> for her wonderful books that sparked
+        the world of <em>How to Train Your Dragon</em>, and to the entire team at
+        <strong>DreamWorks Animation</strong> for bringing that world to life on screen.
+      </p>
+      <p>
+        From the first book to the twelfth, then soaring onto the big screen in 2010 and continuing
+        through every show and film that followed — thank you for the adventure, the memories, and the dragons.
+      </p>
+    </div>
+  </section>`;
+}
+
+export function renderSections() {
+  const placeholder = document.getElementById('sections-placeholder');
+  if (!placeholder) return;
+
+  const html = `
+    ${buildHeroSection()}
     ${buildScrollSection('Cressida Cowell', 'Books', books)}
     ${buildScrollSection('DreamWorks Animation', 'Films', films)}
     ${buildScrollSection('DreamWorks Animation', 'Shows', shows)}
     ${buildScrollSection('Short Films &amp; Specials', 'Specials', specials)}
     ${buildCharacterSection()}
     ${buildLibrarySection()}
+    ${buildThankYouSection()}
   `;
+
+  const fragment = document.createRange().createContextualFragment(html);
+  placeholder.replaceWith(fragment);
 }
