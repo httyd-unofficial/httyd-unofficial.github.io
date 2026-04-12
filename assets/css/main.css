@@ -18,7 +18,7 @@ body {
   transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-main {
+.content {
   padding-top: 72px;
 }
 
@@ -116,11 +116,10 @@ main {
   display: flex;
   gap: 10px;
   overflow-x: auto;
-  padding: 0 1rem 6px;
+  padding: 0 1rem;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
-  scroll-snap-type: x proximity;
 }
 
 .scroll-row::-webkit-scrollbar {

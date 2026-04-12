@@ -12,6 +12,7 @@
     flex: 0 0 175px;
   }
 }
+
 @media (min-width: 900px) {
   .section-label,
   .section-heading {
@@ -26,6 +27,7 @@
     flex: 0 0 185px;
   }
 }
+
 @media (min-width: 1200px) {
   .section-label,
   .section-heading {
@@ -37,8 +39,9 @@
     width: calc(100% - 112px);
   }
 }
+
 @media (max-width: 599px) {
-  main {
+  .content {
     padding-top: 60px;
   }
   .header {
@@ -68,11 +71,13 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (max-width: 768px) {
   .media-split {
     flex-direction: column;
   }
 }
+
 @media (max-width: 812px) and (orientation: landscape) {
   .settings-content {
     max-height: 90vh;
