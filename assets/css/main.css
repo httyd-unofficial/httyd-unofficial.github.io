@@ -15,11 +15,11 @@ body {
   font-weight: 400;
   background: var(--bg);
   color: var(--text);
-  transition: background var(--transition), color var(--transition);
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 main {
-  padding-top: var(--header-height);
+  padding-top: 72px;
 }
 
 #content-fade-overlay {
@@ -45,24 +45,19 @@ main {
 .hero-section {
   padding: 3.5rem 32px 3rem;
   border-bottom: 1px solid var(--border);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-title {
-  margin: 0 0 0.3rem;
+  margin: 0 0 0.75rem;
   font-size: clamp(2rem, 5vw + 0.5rem, 3.2rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 1.05;
   color: var(--text);
-}
-
-.hero-subtitle {
-  margin: 0 0 1rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent);
 }
 
 .hero-body {
@@ -94,7 +89,7 @@ main {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--meta-text);
-  padding: 0 var(--page-padding);
+  padding: 0 20px;
   margin-bottom: 6px;
 }
 
@@ -110,7 +105,7 @@ main {
 
 .section-heading {
   margin: 0 0 12px;
-  padding: 0 var(--page-padding);
+  padding: 0 20px;
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -121,14 +116,24 @@ main {
   display: flex;
   gap: 10px;
   overflow-x: auto;
-  padding: 0 1rem;
+  padding: 0 1rem 6px;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
   scroll-snap-type: x proximity;
 }
 
 .scroll-row::-webkit-scrollbar {
-  display: none;
+  height: 3px;
+}
+
+.scroll-row::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-row::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
 }
 
 .card {
@@ -187,7 +192,7 @@ main {
 }
 
 .info-section {
-  margin: 0 var(--page-padding) 32px;
+  margin: 0 20px 32px;
   padding: 2rem;
   background: var(--card-bg);
   border: 1px solid var(--border);
@@ -274,7 +279,7 @@ main {
 }
 
 .thank-you {
-  margin: 0 var(--page-padding) 2.5rem;
+  margin: 0 20px 2.5rem;
   padding: 2.5rem 1.5rem;
   background: var(--card-bg);
   border: 1px solid var(--border);

@@ -96,7 +96,6 @@ function buildLibrarySection() {
 
 function buildHeroSection() {
   return `<section class="hero-section">
-    <p class="hero-subtitle">Unofficial fan reference</p>
     <h1 class="hero-title">How to Train<br>Your Dragon</h1>
     <p class="hero-body">
       Every book by <strong>Cressida Cowell</strong>, every DreamWorks film,

@@ -26,16 +26,6 @@
   --icon-color: #444;
   --translucent-scrolled-header-bg: rgba(255, 255, 255, 0.8);
   --fade-overlay-color: rgba(255, 255, 255, 1);
-  --shape-large: 24px;
-  --shape-small: 8px;
-  --shape-ease: cubic-bezier(0.2, 0, 0, 1);
-  --shape-duration: 0.3s;
-  --transition: 0.2s ease-in-out;
-  --header-height: 72px;
-  --page-padding: 20px;
-  --z-index-header: 900;
-  --z-index-settings: 2000;
-  --z-index-search: 1000;
 }
 
 body.dark {

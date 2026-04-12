@@ -6,7 +6,7 @@
   background: var(--overlay-bg);
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
-  z-index: var(--z-index-search);
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: center;

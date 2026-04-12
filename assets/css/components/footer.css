@@ -5,10 +5,10 @@
   text-align: center;
   background: var(--footer-bg);
   color: var(--text);
-  padding: 2rem var(--page-padding) 1.5rem;
+  padding: 2rem 20px 1.5rem;
   font-size: 0.82rem;
   border-top: 1px solid var(--border);
-  transition: background var(--transition), color var(--transition);
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .footer-top {

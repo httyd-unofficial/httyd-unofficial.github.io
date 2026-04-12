@@ -1,31 +1,48 @@
 @media (min-width: 600px) {
-  :root {
-    --page-padding: 28px;
+  .section-label,
+  .section-heading {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+  .info-section,
+  .thank-you {
+    margin-left: 28px;
+    margin-right: 28px;
   }
   .card {
     flex: 0 0 175px;
   }
 }
-
 @media (min-width: 900px) {
-  :root {
-    --page-padding: 40px;
+  .section-label,
+  .section-heading {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .info-section,
+  .thank-you {
+    margin-left: 40px;
+    margin-right: 40px;
   }
   .card {
     flex: 0 0 185px;
   }
 }
-
 @media (min-width: 1200px) {
-  :root {
-    --page-padding: 56px;
+  .section-label,
+  .section-heading {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+  .info-section,
+  .thank-you {
+    margin-left: 56px;
+    margin-right: 56px;
   }
 }
-
 @media (max-width: 599px) {
-  :root {
-    --header-height: 60px;
-    --page-padding: 16px;
+  main {
+    padding-top: 60px;
   }
   .header {
     padding: 14px 20px;
@@ -61,13 +78,11 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (max-width: 768px) {
   .media-split {
     flex-direction: column;
   }
 }
-
 @media (max-width: 812px) and (orientation: landscape) {
   .settings-content {
     max-height: 90vh;

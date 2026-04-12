@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   padding: 20px 32px;
-  z-index: var(--z-index-header);
+  z-index: 900;
   will-change: padding, background-color, backdrop-filter;
   transition: padding 0.3s ease, backdrop-filter 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
   background: var(--header-bg);
@@ -29,7 +29,6 @@ body.no-blur .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
 }
 
 .image-title {
