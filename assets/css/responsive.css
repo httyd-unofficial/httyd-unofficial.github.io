@@ -78,6 +78,25 @@
   }
 }
 
+@media (min-width: 1100px) {
+  .library-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .library-row .info-section {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+    width: auto;
+    margin: 0 0 32px;
+  }
+}
+
 @media (max-width: 812px) and (orientation: landscape) {
   .settings-content {
     max-height: 90vh;

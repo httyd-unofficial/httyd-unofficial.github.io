@@ -131,8 +131,10 @@ export function renderSections() {
     ${buildScrollSection('DreamWorks Animation', 'Films', films)}
     ${buildScrollSection('DreamWorks Animation', 'Shows', shows)}
     ${buildScrollSection('Short Films &amp; Specials', 'Specials', specials)}
-    ${buildCharacterSection()}
-    ${buildLibrarySection()}
+    <div class="library-row">
+      ${buildCharacterSection()}
+      ${buildLibrarySection()}
+    </div>
     ${buildThankYouSection()}
   `;
 
