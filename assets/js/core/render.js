@@ -131,11 +131,13 @@ export function renderSections() {
     ${buildScrollSection('DreamWorks Animation', 'Films', films)}
     ${buildScrollSection('DreamWorks Animation', 'Shows', shows)}
     ${buildScrollSection('Short Films &amp; Specials', 'Specials', specials)}
-    <div class="library-row">
+    <div class="info-section-grid">
       ${buildCharacterSection()}
       ${buildLibrarySection()}
     </div>
-    ${buildThankYouSection()}
+    <div class="info-section-grid">
+      ${buildThankYouSection()}
+    </div>
   `;
 
   const fragment = document.createRange().createContextualFragment(html);

@@ -1,15 +1,42 @@
 @media (min-width: 600px) {
+  .content {
+    padding-top: 72px;
+  }
+  .header {
+    padding: 20px 32px;
+  }
+  .header.scrolled {
+    padding: 10px 28px;
+  }
   .section-label,
   .section-heading {
     padding-left: 28px;
     padding-right: 28px;
   }
-  .info-section,
-  .thank-you {
-    width: calc(100% - 56px);
+  .section-heading {
+    font-size: 1.2rem;
   }
   .card {
     flex: 0 0 175px;
+  }
+  .info-section-grid {
+    padding: 0 28px;
+  }
+  .settings-header {
+    padding: 1rem 2rem;
+  }
+  .settings-body {
+    padding: 2rem;
+    gap: 2.5rem;
+  }
+  .theme-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 769px) {
+  .media-split {
+    flex-direction: row;
   }
 }
 
@@ -19,12 +46,30 @@
     padding-left: 40px;
     padding-right: 40px;
   }
-  .info-section,
-  .thank-you {
-    width: calc(100% - 80px);
+  .info-section-grid {
+    padding: 0 40px;
   }
   .card {
     flex: 0 0 185px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .info-section-grid {
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .info-section-grid .info-section {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+  }
+  .info-section-grid:has(.thank-you) {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -34,63 +79,12 @@
     padding-left: 56px;
     padding-right: 56px;
   }
-  .info-section,
-  .thank-you {
-    width: calc(100% - 112px);
+  .info-section-grid {
+    padding: 0 56px;
   }
 }
 
-@media (max-width: 599px) {
-  .content {
-    padding-top: 60px;
-  }
-  .header {
-    padding: 14px 20px;
-  }
-  .header.scrolled {
-    padding: 8px 16px;
-  }
-  .section-heading {
-    font-size: 1.1rem;
-  }
-  .settings-body {
-    padding: 1.25rem;
-    gap: 2rem;
-  }
-  .settings-header {
-    padding: 0.875rem 1.25rem;
-  }
-  .theme-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .media-split {
-    flex-direction: column;
-  }
-}
-
-@media (min-width: 1100px) {
-  .library-row {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 24px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
-  .library-row .info-section {
-    flex: 1 1 0;
-    min-width: 0;
-    max-width: none;
-    width: auto;
-    margin: 0 0 32px;
-  }
-}
-
-@media (max-width: 812px) and (orientation: landscape) {
+@media (min-width: 600px) and (max-height: 500px) and (orientation: landscape) {
   .settings-content {
     max-height: 90vh;
   }
