@@ -34,6 +34,15 @@
   }
 }
 
+@media (min-width: 700px) {
+  .settings-content {
+    max-width: 700px;
+  }
+  .theme-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 @media (min-width: 769px) {
   .media-split {
     flex-direction: row;
