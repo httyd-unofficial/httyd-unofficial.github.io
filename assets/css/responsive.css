@@ -19,9 +19,6 @@
   .card {
     flex: 0 0 175px;
   }
-  .info-section-grid {
-    padding: 0 28px;
-  }
   .settings-header {
     padding: 1rem 2rem;
   }
@@ -55,11 +52,14 @@
     padding-left: 40px;
     padding-right: 40px;
   }
-  .info-section-grid {
-    padding: 0 40px;
-  }
   .card {
     flex: 0 0 185px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .info-section-grid {
+    flex-direction: row;
   }
 }
 
@@ -68,9 +68,6 @@
   .section-heading {
     padding-left: 56px;
     padding-right: 56px;
-  }
-  .info-section-grid {
-    padding: 0 56px;
   }
 }
 
