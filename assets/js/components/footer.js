@@ -15,7 +15,7 @@ export function createFooter() {
           Jesus said to him, "I am the way, the truth, and the life. No one comes to the Father except through Me." — John 14:6 NKJV
         </p>
         <p>
-          Website designed and developed by
+          Designed and developed by
           <a class="name" href="https://gabriellongshaw.co.uk/" target="_blank" rel="noopener">Gabriel Longshaw</a>.
         </p>
       </div>
